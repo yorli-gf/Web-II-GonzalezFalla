@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de clientes</title>
+    <style>
+        .container { display: flex; flex-wrap: wrap; justify-content: center; }
+        .card { width: 250px; margin: 10px; border: 1px solid #ddd; text-align: center; }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-body { padding: 10px; }
+        .bold { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Lista de clientes</h1>
+    <div class="container">
+        {% for user in users %}
+        <div class="card">
+            <img src="{% static user.photo %}" alt="{{ user.name }}">
+            <div class="card-body">
+                <p>{{ user.name }}</p>
+                <p><span class="bold">ID:</span> {{ user.id }} <span class="bold">Age:</span> {{ user.age }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+*{
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    color:rgb(246, 210, 236);
+}
+
+p {
+    text-align: center;
+    color:rgb(130, 171, 246);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.container div {
+    text-align: center;
+    color: beige;
+    font-size: 20px;
+    border: 1px solid whitesmoke;
+}
