@@ -1,0 +1,21 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: white; 
+}
+
+/* Estilos para la imagen */
+.landing-image {
+    max-width: 90%; 
+    max-height: 90%; 
+}
