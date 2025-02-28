@@ -6,7 +6,6 @@
     background-color: #ffefff; /* Fondo rosa claro y suave */
     border-bottom: 2px solid #ffb6c1; /* Borde inferior rosa claro */
     box-shadow: 0 2px 4px rgba(255, 182, 193, 0.2); /* Sombra suave */
-    z-index: 1000;
 }
 
 /* Estilos para las opciones del menú */
