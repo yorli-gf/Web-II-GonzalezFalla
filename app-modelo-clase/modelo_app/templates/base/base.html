@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-{% load static %}
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <link rel="stylesheet" href="{% static 'css/create.css' %}">
-    {% block styles %}
-    {% endblock %}
-</head>
+    <title>{% block title %}Mi Proyecto{% endblock %}</title>
 
+</head>
 <body>
+    <!-- Navbar -->
     {% include 'base/header.html' %}
 
+    <!-- Contenido principal -->
     <main>
         {% block content %}
         {% endblock %}
     </main>
 
+    <!-- Footer -->
     {% include 'base/footer.html' %}
 
-    {% block scripts %}  <!-- Corregido: "scrips" -> "scripts" -->
-    {% endblock %}
+    <!-- Cargar archivos JS -->
+
 </body>
 </html>

@@ -1,0 +1,15 @@
+{% load static %}
+<div class="boleto-card">
+    <div class="boleto-image">
+        <!-- Espacio para la imagen -->
+        <img src="{% static image_url|default:'images/default-boleto.png' %}" alt="{{ nombre }}">
+    </div>
+    <div class="boleto-data">
+        <p><strong>Nombre:</strong> {{ nombre }}</p>
+        <p><strong>Localidad:</strong> {{ localidad }}</p>
+        <p><strong>Precio:</strong> ${{ precio }}</p>
+    </div>
+    <div class="boleto-action">
+        <a href="#" class="btn btn-primary">Comprar</a>
+    </div>
+</div>

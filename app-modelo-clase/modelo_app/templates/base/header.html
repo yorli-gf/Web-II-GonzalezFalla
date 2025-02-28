@@ -1,12 +1,6 @@
 <nav>
-    <div class="menu">
-        <div class="menu-options">
-            <div>
-                <a href="{% url 'landing' %}">Main</a>
-                <a href="{% url 'indexOrders' %}">Orders</a>
-                <a href="{% url 'usersindex' %}">Users</a>
-                <a href="{% url 'createUser' %}">Create</a>
-            </div>
-        </div>
-    </div>
+    <ul>
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li><a href="{% url 'boletos' %}">Boletos</a></li>
+    </ul>
 </nav>
