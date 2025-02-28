@@ -1,7 +1,11 @@
 nav {
-    background-color: #343a40;
+    width: 100%;
     padding: 10px 20px;
+    display: flex;
+    justify-content: center; /* Asegura que el contenido esté centrado */
+    flex-wrap: wrap; /* Permite que los elementos se acomoden sin afectar la página */
 }
+
 
 nav a {
     color: #fff;

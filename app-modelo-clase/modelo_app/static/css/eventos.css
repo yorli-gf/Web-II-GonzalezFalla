@@ -1,6 +1,7 @@
 .eventos-container {
     padding: 20px;
-    max-width: auto;
+    max-width: 1200px; /* Define un ancho máximo válido (ajústalo según necesites) */
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -13,11 +14,12 @@
 }
 
 .eventos-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Muestra hasta 3 eventos por fila */
     gap: 20px;
     justify-content: center;
 }
+
 
 /* Estilos para la tarjeta de evento */
 .evento-card {

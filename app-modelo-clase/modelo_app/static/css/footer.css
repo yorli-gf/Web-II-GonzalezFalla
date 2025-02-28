@@ -1,11 +1,10 @@
 /* Estilos para el footer */
 footer {
-    background-color: #77dd77; 
+    background-color: #8aec8a; 
     color: #fff; /* Texto blanco */
     text-align: center;
     padding: 15px 0;
     width: 100%;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
     font-family: 'Arial', sans-serif;
     font-size: 0.9rem;
 }

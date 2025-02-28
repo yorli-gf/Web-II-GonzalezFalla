@@ -1,9 +1,8 @@
-/* Estilos específicos para la página de boletos */
 
-/* Contenedor principal de la página de boletos */
 .boletos-container {
     padding: 20px;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -25,10 +24,10 @@
 
 /* Estilos para la tarjeta de boleto */
 .boleto-card {
-    border-radius: 10px; /* Bordes redondeados */
+    border-radius: 10px; 
     padding: 15px;
     background-color: #fff;
-    width: calc(25% - 20px); /* 4 boletos por fila */
+    width: calc(25% - 20px); 
     box-sizing: border-box;
 }
 
@@ -48,18 +47,18 @@
 }
 
 .boleto-data p strong {
-    color: black; /* Color del texto en negrita */
+    color: black;
 }
 
 /* Botón de acción (Comprar) */
 .boleto-action .btn {
     width: 95%;
-    background-color: black; /* Fondo negro */
+    background-color: black; 
     border: none;
     padding: 10px;
     border-radius: 5px;
     font-size: 1rem;
-    color: #fff; /* Texto blanco */
+    color: #fff; 
     text-align: center;
     text-decoration: none;
     display: block;
