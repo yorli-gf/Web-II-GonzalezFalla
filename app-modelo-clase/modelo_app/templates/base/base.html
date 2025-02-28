@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mi Proyecto{% endblock %}</title>
+    <title>{% block title %}Examen{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 
+
+    <link rel="stylesheet" href="{% static 'css/boletos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/eventos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+   
 </head>
 <body>
     <!-- Navbar -->
@@ -18,8 +27,6 @@
 
     <!-- Footer -->
     {% include 'base/footer.html' %}
-
-    <!-- Cargar archivos JS -->
 
 </body>
 </html>

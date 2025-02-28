@@ -1,0 +1,11 @@
+{% load static %}
+<div class="evento-card">
+    <div class="evento-image">
+        <img src="{% static 'images/evento1.jpg' %}" alt="Imagen del boleto">
+    </div>
+    <div class="evento-info">
+        <h2 class="evento-name">{{ nombre }}</h2>
+        <p class="evento-localidad">{{ localidad }}</p>
+        <a href="{% url 'boletos' %}" class="btn-boletos">Boletos</a>
+    </div>
+</div>

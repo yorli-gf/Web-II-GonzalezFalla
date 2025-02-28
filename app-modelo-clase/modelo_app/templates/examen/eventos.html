@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Eventos{% endblock %}
+
+{% block extra_css %}
+<!-- Cargar el archivo CSS específico para eventos -->
+<link rel="stylesheet" href="{% static 'css/eventos.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="eventos-container">
+    <h1 class="eventos-title">Eventos Disponibles</h1>
+    <div class="eventos-grid">
+        <!-- Iterar sobre los eventos -->
+        {% for evento in eventos %}
+        <div class="evento-wrapper">
+            {% include 'components/evento_card.html' with nombre=evento.name localidad=evento.localidad.name image_url="images/boleto" %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

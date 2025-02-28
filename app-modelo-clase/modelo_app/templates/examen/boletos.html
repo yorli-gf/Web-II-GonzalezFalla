@@ -3,42 +3,21 @@
 
 {% block title %}Boletos{% endblock %}
 
+{% block extra_css %}
+<!-- Cargar el archivo CSS específico para boletos -->
+<link rel="stylesheet" href="{% static 'css/boletos.css' %}">
+{% endblock %}
+
 {% block content %}
-<div class="container mt-5">
-    <h1 class="text-center mb-4">Boletos Disponibles</h1>
-    <div class="row">
-        <!-- Boleto 1 -->
-        <div class="col-md-3 mb-4">
-            {% include 'components/boleto_card.html' with nombre="Boleto 1" localidad="Barranquilla" precio="100" image_url="images/boleto1.jpg" %}
+<div class="boletos-container">
+    <h1 class="boletos-title">Boletos</h1>
+    <div class="boletos-grid">
+        <!-- Iterar sobre los boletos -->
+        {% for boleto in boletos %}
+        <div class="boleto-card">
+            {% include 'components/boleto_card.html' with nombre=boleto.evento.name localidad=boleto.evento.localidad.name precio=boleto.precio image_url="images/boleto" %}  
         </div>
-        <!-- Boleto 2 -->
-        <div class="col-md-3 mb-4">
-            {% include 'components/boleto_card.html' with nombre="Boleto 2" localidad="Bogotá" precio="200" image_url="images/boleto2.jpg" %}
-        </div>
-        <!-- Boleto 3 -->
-        <div class="col-md-3 mb-4">
-            {% include 'components/boleto_card.html' with nombre="Boleto 3" localidad="Medellín" precio="300" image_url="images/boleto3.jpg" %}
-        </div>
-        <!-- Boleto 4 -->
-        <div class="col-md-3 mb-4">
-            {% include 'components/boleto_card.html' with nombre="Boleto 4" localidad="Barranquilla" precio="100" image_url="images/boleto4.jpg" %}
-        </div>
-        <!-- Boleto 5 -->
-        <div class="col-md-3 mb-4">
-            {% include 'components/boleto_card.html' with nombre="Boleto 5" localidad="Barranquilla" precio="100" image_url="images/boleto5.jpg" %}
-        </div>
-        <!-- Boleto 6 -->
-        <div class="col-md-3 mb-4">
-            {% include 'components/boleto_card.html' with nombre="Boleto 6" localidad="Bogotá" precio="200" image_url="images/boleto6.jpg" %}
-        </div>
-        <!-- Boleto 7 -->
-        <div class="col-md-3 mb-4">
-            {% include 'components/boleto_card.html' with nombre="Boleto 7" localidad="Medellín" precio="300" image_url="images/boleto7.jpg" %}
-        </div>
-        <!-- Boleto 8 -->
-        <div class="col-md-3 mb-4">
-            {% include 'components/boleto_card.html' with nombre="Boleto 8" localidad="Barranquilla" precio="100" image_url="images/boleto8.jpg" %}
-        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

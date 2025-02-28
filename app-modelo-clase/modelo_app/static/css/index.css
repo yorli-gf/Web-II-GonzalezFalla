@@ -1,0 +1,84 @@
+.index-container {
+    padding: 20px;
+    max-width: auto;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.cuadricula-imagenes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 20px; /* Espacio entre las imágenes */
+    margin-bottom: 30px;
+}
+
+.cuadricula-imagenes .imagen {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px; /* Altura fija para las imágenes */
+}
+
+.cuadricula-imagenes .imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+    border-radius: 10px;
+}
+
+/* Sección de noticias y eventos */
+.noticias-eventos {
+    display: flex;
+    gap: 20px;  /* Espacio entre las columnas */
+}
+
+/* Columna de noticias */
+.noticias {
+    width: 50%; 
+    display: flex;
+    flex-direction: column; 
+}
+
+/* Estilos para cada noticia */
+.noticia {
+    display: flex;
+    flex-direction: column; /* Imagen arriba, contenido abajo */
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no se sume al tamaño total */
+}
+
+/* Imagen de la noticia */
+.noticia-imagen {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.noticia-imagen img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Contenido de la noticia */
+.noticia-contenido {
+    width: 100%;
+}
+
+.noticia-contenido p {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+.eventos-destacados {
+    width: 40%; /* Ajusta este valor si necesitas más o menos espacio para eventos */
+    display: flex;
+    flex-direction: column; /* Asegura que los eventos estén verticalmente */
+    gap: 20px; /* Espacio entre los eventos */
+}

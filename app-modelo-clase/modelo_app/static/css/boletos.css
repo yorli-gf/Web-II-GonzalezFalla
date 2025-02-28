@@ -1,0 +1,71 @@
+/* Estilos específicos para la página de boletos */
+
+/* Contenedor principal de la página de boletos */
+.boletos-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título de la página */
+.boletos-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #343a40;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de la cuadrícula de boletos */
+.boletos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los boletos */
+    justify-content: center;
+}
+
+/* Estilos para la tarjeta de boleto */
+.boleto-card {
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 15px;
+    background-color: #fff;
+    width: calc(25% - 20px); /* 4 boletos por fila */
+    box-sizing: border-box;
+}
+
+
+/* Imagen del boleto */
+.boleto-image img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Información del boleto */
+.boleto-data p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.boleto-data p strong {
+    color: black; /* Color del texto en negrita */
+}
+
+/* Botón de acción (Comprar) */
+.boleto-action .btn {
+    width: 95%;
+    background-color: black; /* Fondo negro */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #fff; /* Texto blanco */
+    text-align: center;
+    text-decoration: none;
+    display: block;
+
+}
+
+
+
+

@@ -1,27 +1,19 @@
-/* Estilos generales para el menú */
-.menu {
-    display: flex;
-    justify-content: space-evenly; /* Alinea los elementos a la derecha */
-    padding: 15px 20px;
-    background-color: #ffefff; /* Fondo rosa claro y suave */
-    border-bottom: 2px solid #ffb6c1; /* Borde inferior rosa claro */
-    box-shadow: 0 2px 4px rgba(255, 182, 193, 0.2); /* Sombra suave */
+nav {
+    background-color: #343a40;
+    padding: 10px 20px;
 }
 
-/* Estilos para las opciones del menú */
-.menu-options {
-    display: flex;
-    align-items: center;
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    display: inline-block;
 }
 
-.menu-options a {
-    margin: 0 20px; /* Espacio entre los enlaces */
-    text-decoration: none; /* Sin subrayado */
-    color: #d94f8c; /* Color rosa oscuro */
-    font-size: 18px;
-    font-family: 'Georgia', serif; /* Tipografía elegante */
-    font-weight: bold;
-    letter-spacing: 1px; /* Espaciado entre letras */
-}
+
 
 
