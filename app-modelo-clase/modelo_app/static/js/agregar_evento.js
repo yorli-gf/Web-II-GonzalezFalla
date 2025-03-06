@@ -1,4 +1,6 @@
 const button = document.querySelector("#create-event-button");
+let ultimaLocalidad = null;
+
 button.addEventListener("click", function (event) {
     event.preventDefault();  
 
@@ -32,6 +34,12 @@ button.addEventListener("click", function (event) {
     if (!data["localidad"]) {
         alert("Debes seleccionar una localidad.");
         return;  
+    }
+
+    // Validación 4: No permitir dos eventos seguidos en la misma localidad
+    if (ultimaLocalidad === data["localidad"]) {
+        alert("No puedes crear dos eventos seguidos en la misma localidad.");
+        return;
     }
 
     // Hacer la solicitud POST usando fetch
