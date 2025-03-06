@@ -10,7 +10,10 @@
 
 {% block content %}
 <div class="eventos-container">
-    <h1 class="eventos-title">Eventos Disponibles</h1>
+    <div class="eventos-header">
+        <h1 class="eventos-title">Eventos Disponibles</h1>
+        <a href="{% url 'agregar_evento' %}" class="btn-agregar-evento">Agregar evento</a>
+    </div>
     <div class="eventos-grid">
         <!-- Iterar sobre los eventos -->
         {% for evento in eventos %}

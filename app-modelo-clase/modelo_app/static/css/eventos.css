@@ -5,7 +5,20 @@
     margin: 0 auto;
 }
 
-/* Título de la página */
+.eventos-header {
+    text-align: center; /* Centra el contenido */
+    margin-bottom: 50px; /* Espacio debajo del header */
+}
+
+.btn-agregar-evento {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 .eventos-title {
     text-align: center;
     font-size: 2.5rem;

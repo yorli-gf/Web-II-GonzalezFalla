@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Examen{% endblock %}</title>
-    
-    <link rel="stylesheet" href="{% static 'css/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-
 
     <link rel="stylesheet" href="{% static 'css/boletos.css' %}">
     <link rel="stylesheet" href="{% static 'css/eventos.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
    
 </head>
 <body>
@@ -29,4 +28,7 @@
     {% include 'base/footer.html' %}
 
 </body>
+
+{% block scripts %}
+{% endblock %}
 </html>
