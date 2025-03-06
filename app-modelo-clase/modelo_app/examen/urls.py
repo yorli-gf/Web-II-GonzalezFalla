@@ -5,6 +5,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('eventos/', views.eventos, name='eventos'),
     path('boletos/', views.boletos, name='boletos'),
+    path('boletos/<int:evento_id>/', views.boletos_por_evento, name='boletos_por_evento'),
     path('agregar_evento/', views.agregar_evento, name='agregar_evento'),
     path("agregar_eventobyfetch", views.agregar_eventobyfetch, name="agregar_eventobyfetch"),
     path('eliminar_eventobyfetch', views.eliminar_eventobyfetch, name='eliminar_eventobyfetch'),

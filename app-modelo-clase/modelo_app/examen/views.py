@@ -18,7 +18,11 @@ def boletos(request):
     boletos = Boleto.objects.all()
     return render(request, 'examen/boletos.html', {'boletos': boletos})
 
+def boletos_por_evento(request, evento_id):
+    evento = get_object_or_404(Evento, id=evento_id)  # Obtener el evento o devolver error 404
+    boletos = Boleto.objects.filter(evento=evento)  # Filtrar boletos de ese evento
 
+    return render(request, 'examen/boletos.html', {'boletos': boletos, 'evento': evento})
 
 @csrf_exempt
 def agregar_evento(request):

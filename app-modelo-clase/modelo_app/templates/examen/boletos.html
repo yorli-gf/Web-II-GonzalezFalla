@@ -10,14 +10,17 @@
 
 {% block content %}
 <div class="boletos-container">
-    <h1 class="boletos-title">Boletos</h1>
-    <div class="boletos-grid">
-        <!-- Iterar sobre los boletos -->
-        {% for boleto in boletos %}
-        <div class="boleto-card">
-            {% include 'components/boleto_card.html' with nombre=boleto.evento.name localidad=boleto.evento.localidad.name precio=boleto.precio image_url="images/boleto" %}  
+    {% if boletos %}
+        <div class="boletos-grid">
+            <!-- Iterar sobre los boletos -->
+            {% for boleto in boletos %}
+            <div class="boleto-card">
+                {% include 'components/boleto_card.html' with nombre=boleto.evento.name localidad=boleto.evento.localidad.name precio=boleto.precio image_url="images/boleto" %}
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
+    {% else %}
+        <p class="no-boletos">Sin boletos disponibles para este evento.</p>  <!-- Mensaje cuando no hay boletos -->
+    {% endif %}
 </div>
 {% endblock %}
