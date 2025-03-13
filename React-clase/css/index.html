@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <!-- Agregar el script de Babel -->
+        <script src="https://unpkg.com/@babel/standalone"></script>
+        <script type="text/babel" src="components/MyButton.js"></script>
+        <script type="text/babel" src="components/Alumno.js"></script>
+        <style src="css/styles.css"></style>
+    </head>
+    <body>
+
+        <div id="root">
+
+        </div>
+    
+    </body>
+
+    <script type="text/babel">
+
+        function saludar(params){
+            alert('Hola Mundo');
+        }
+
+        function despedir(params){
+            alert('Adios Mundo');
+        }
+
+        function App() {
+            const { useState } = React;
+            const [contador, setContador] = useState(0);
+            const [contador2, setContador2] = useState(0);
+            const [texto, setTexto] = useState('Hola Mundo');
+
+            const alumnos = [
+                { nombre: "Juan", materias: ["Matemáticas", "Historia", "Ciencias"], calificaciones: [9, 8, 7] },
+                { nombre: "Pedro", materias: ["Matemáticas", "Español", "Inglés"], calificaciones: [6, 9, 8] },
+                { nombre: "Maria", materias: ["Historia", "Arte", "Ciencias"], calificaciones: [10, 9, 8] },
+                { nombre: "Ana", materias: ["Química", "Física", "Matemáticas"], calificaciones: [7, 8, 9] },
+                { nombre: "Luis", materias: ["Geografía", "Historia", "Inglés"], calificaciones: [9, 8, 7] },
+                { nombre: "Carlos", materias: ["Biología", "Química", "Ciencias"], calificaciones: [10, 10, 9] },
+                { nombre: "Laura", materias: ["Matemáticas", "Español", "Arte"], calificaciones: [8, 7, 9] },
+                { nombre: "Sofía", materias: ["Física", "Educación Física", "Inglés"], calificaciones: [6, 7, 8] },
+                { nombre: "Miguel", materias: ["Historia", "Matemáticas", "Filosofía"], calificaciones: [9, 8, 10] },
+                { nombre: "Elena", materias: ["Química", "Ciencias", "Matemáticas"], calificaciones: [7, 6, 8] },
+            ];
+
+            return (
+                <div>
+                    <h1>Hola Mundo</h1>
+                    <p>Esto es React</p>
+                    <button onClick={saludar}>Click</button>
+                    
+                    <MyButton titulo="Saludar" contador={contador} setContador={setContador} />
+                    <h2>Contador: {contador}</h2>
+
+                    <MyButton titulo="Despedir" contador={contador2} setContador={setContador2} />
+                    <h2>Contador2: {contador2}</h2>
+
+                    <h1>Lista de Alumnos</h1>
+                    <div className="container">
+                        {alumnos.map((alumno, index) => (
+                            <Alumno 
+                                key={index} 
+                                nombre={alumno.nombre} 
+                                materias={alumno.materias} 
+                                calificaciones={alumno.calificaciones} 
+                            />
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+
+</html>
