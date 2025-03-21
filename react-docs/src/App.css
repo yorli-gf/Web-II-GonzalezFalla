@@ -24,6 +24,7 @@
   color: white;
 }
 
+
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +36,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row; 
+  gap: 20px; 
+  padding: 0;
+  margin: 0;
 }
