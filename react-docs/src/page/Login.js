@@ -64,6 +64,7 @@ function fetLogIn(data, navigate) {
             return;
         }
         localStorage.setItem("token", response.accessToken);
+        console.log()
         navigate("/products")
     })
 }
