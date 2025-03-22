@@ -8,7 +8,7 @@ export default function ProductItem()
             <div className="product-details">
                 <div className="container-products">
                     <h4>Product Name</h4>
-                    <p>lorem ipsum dolor sit amet</p>
+                    <p>Descripcion del producto aquí</p>
                 </div>
             </div>
         </div>
