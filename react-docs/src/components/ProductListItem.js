@@ -1,4 +1,4 @@
-import "../style/products.css";
+
 
 export default function ProductListItem({title, id, description, images}){
     const image = images?.[0] ?? ""
@@ -11,9 +11,7 @@ export default function ProductListItem({title, id, description, images}){
                 
                 <div className="product-detail">
                     <h4>{description}</h4>
-                    <p> 
-                        {title}   
-                    </p>
+                    <p>{title}</p>
                 </div>
             </div>
         </div>
