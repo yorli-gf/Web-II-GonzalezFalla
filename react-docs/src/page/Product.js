@@ -1,31 +1,85 @@
-import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react";
-import ProductListItem from "../components/Form/ProductListItem";
-export default function Product() {
-    const { id } = useParams();
+import { useNavigate } from 'react-router-dom'
+import ProductItem from '../components/ProductItem'
+import '../style/products.css'
+import { useEffect, useState } from 'react'
 
-    const [ product, setProduct] = useState(null);
+export default function Products()
+{
+    const [products, setProducts] = useState(null);
+    const [productId, setProductId] = useState(null);
+    const [word, setWord] = useState(null);
+    const [loading, setLoading] = useState(null);
 
     useEffect(() => {
-        const fetchProduct = async () => {
-            const data = await getProductById(id);
+        const fetchProducts = async () => {
+            setLoading(true);
+
+            const data = await getProducts();
+
+            setProducts(data.products);
+
+            setLoading(false);
         }
 
-        fetchProduct()
-    }, [id])
+        fetchProducts()
+    }, []);
+
+    useEffect(() => {
+        const hasWord = word !== null && word !== undefined && word.length > 3;
+        
+        if(!hasWord) return;
+
+        const fetchProductsByWord = async () => {
+            setLoading(true);
+            const data = await getProductsByWord(word)
+            setProducts(data.products);
+            setLoading(false);
+        }
+
+        fetchProductsByWord();
+    }, [word])
+
+
     return (
         <div>
-            {product && <ProductListItem 
-            title={product.title}
-            id={product.id}
-            description={product.description}
-            images={product.images} />
-            }
+            <div className='products-title'>
+                <h2>Our Products</h2>
+            </div>
+
+            <div className='product-input'>
+                <input onChange={(e) => setWord(e.target.value)} placeholder='Search item...'></input>
+            </div>
+
+            {loading ? (
+                <div className='loading-container'>
+                    <div className='spinner'></div>
+                    <p>Loading products...</p>
+                </div> ) : (
+                    <div className="container-products">
+                    {products &&
+                        products.map((item) => (
+                            <ProductItem
+                                key={item.id}
+                                title={item.title}
+                                id={item.id}
+                                description={item.description}
+                                images={item.images}
+                            />
+                        ))}
+                    </div>
+                )}
         </div>
     )
 }
 
-async function getProductById(id) {
-    const product = await fetch();
-    return product.json()
+
+async function getProducts()
+{
+    const products = await fetch("https://dummyjson.com/products");
+    return products.json();
+}
+
+async function getProductsByWord(word) {
+    const products = await fetch(`https://dummyjson.com/products/search?q=${word}`)
+    return products.json()
 }

@@ -1,4 +1,4 @@
-
+import "../style/products.css";
 
 export default function ProductListItem({title, id, description, images}){
     const image = images?.[0] ?? ""
@@ -6,7 +6,7 @@ export default function ProductListItem({title, id, description, images}){
         <div>
             <div className="product-list-item" key={id}>
                 <div className="product-image">
-                    <img src={images[0]} alt="product" />
+                    <img src={image} alt="product" />
                 </div>
                 
                 <div className="product-detail">
