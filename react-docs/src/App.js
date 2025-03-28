@@ -1,3 +1,4 @@
+import './App.css';
 import Menu from './page/base/Menu';
 
 function App() {

@@ -1,13 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import MyRouters from '../../router/Router';
 
 export default function Menu() {
     const location = useLocation();
-    const restringuidos = ["/login"]
-    const noExiste = restringuidos.indexOf(location.pathname) === -1;
+    const restringidos = ["/login"];
+
+    const notAllowed = restringidos.indexOf(location.pathname) === -1;
     return (
         <div className="App">
-            {(noExiste && <header className="App-header">
+            {(notAllowed && 
+            <header>
                 <nav>
                 <ul>
                     <li><Link to="/">Inicio</Link></li>
