@@ -36,3 +36,26 @@
     color: #27ae60;
 }
 
+.quantity-container {
+    margin: 10px 0;
+}
+
+.quantity-container input {
+    width: 50px;
+    text-align: center;
+}
+
+.add-to-cart-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-to-cart-button:hover {
+    background-color: #218838;
+}
+
+
