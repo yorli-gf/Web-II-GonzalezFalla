@@ -36,13 +36,12 @@ export default function ProductInfo() {
 
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        // Buscar si ya existe el producto en el carrito
+  
         const existingProductIndex = cart.findIndex(item => item.id === newItem.id);
         if (existingProductIndex !== -1) {
             cart[existingProductIndex].quantity += selectedQuantity;
             cart[existingProductIndex].total = cart[existingProductIndex].quantity * cart[existingProductIndex].price;
         } else {
-            // Regla: No más de 5 productos diferentes
             if (cart.length >= 5) {
                 alert("No puedes agregar más de 5 productos diferentes al carrito.");
                 return;
@@ -50,7 +49,7 @@ export default function ProductInfo() {
             cart.push(newItem);
         }
 
-        // Regla: No superar los $10,000 en total
+  
         const totalCost = cart.reduce((acc, item) => acc + item.total, 0);
         if (totalCost > 10000) {
             alert("No puedes superar los $10,000 en total en el carrito.");
